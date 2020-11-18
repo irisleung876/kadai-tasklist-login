@@ -3,7 +3,7 @@ class TasksController < ApplicationController
  before_action :correct_user, only: [:destroy, :edit, :show , :update]
     
  def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
  end
  
  def create
